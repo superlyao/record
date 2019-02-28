@@ -1,0 +1,20 @@
+指令
+    ng-directives angularJs通过该指令扩展了HTML
+    ng-app  定义了一个angularJS应用程序，
+            在网页加载完毕时会自动引导(自动初始化)应用程序
+    ng-model 把元素值绑定到应用程序
+            为应用程序数据提供类型验证（number、email、required）。
+            为应用程序数据提供状态（invalid、dirty、touched、error）。
+            为 HTML 元素提供 CSS 类。
+            绑定 HTML 元素到 HTML 表单。
+    ng-bind 把应用程序的数据绑定到HTML视图
+    ng-init 初始化angularJs应用程序变量
+    ng-repeat 重复一个html元素
+ng-app定义了应用
+ng-controller定义了控制器
+    restrict 值可以是以下几种:
+    E 作为元素名使用
+    A 作为属性使用
+    C 作为类名使用
+    M 作为注释使用
+

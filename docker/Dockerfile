@@ -1,0 +1,4 @@
+FROM elasticsearch:5.6.1
+MAINTAINER yliao
+ENV ES_JAVA_OPTS="-Xms256m -Xmx256m"
+EXPOSE 9200

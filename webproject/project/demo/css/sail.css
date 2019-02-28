@@ -1,0 +1,19 @@
+.main{
+
+}
+form{
+    padding: 50px;
+}
+label{
+
+}
+.title{
+    background-color: blue;
+    width: 200px;
+}
+textarea{
+    padding: 20px;
+    height: 200px;
+    width: 400px;
+    vertical-align:top;
+}

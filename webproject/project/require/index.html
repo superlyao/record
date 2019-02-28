@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/require.js"  ></script>
+    <script type="text/javascript">
+        //先渲染画面，加载数组中的js文件，在执行function函数
+        require(["js/index"],function () {
+            alert('2');
+        });
+        require(['js/math'],function (math) {
+            alert(math.add(2,3));
+        })
+    </script>
+</head>
+<body>
+    <span>a</span>
+</body>
+</html>
