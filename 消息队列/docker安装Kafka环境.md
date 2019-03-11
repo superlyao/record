@@ -27,5 +27,26 @@ docker run  -d --name kafka \
 
 ### 安装zookeeper
 
-- 下载 zookeeper wget 
+- 下载 zookeeper 
+- 配置 zookeeper环境
+
+```
+export ZOOKEEPER_HOME=/opt/zookeeper/zookeeper-3.4.13
+export PATH=$ZOOKEEPER_HOME/bin:$PATH
+
+```
+
 - 启动命令 /opt/zookeeper/zookeeper-3.4.13/bin/zkServer.sh start
+
+### 安装 kafka
+
+- 下载 kafka 
+- 默认配置启动kafka: bin/kafka-server-start.sh -daemon config/server.properties
+- 创建topic： bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --                                   partitions 1 --topic MyTopic
+```
+--zookeeper localhost:2181 zookeeper 安装地址和端口
+replication-factor 副本数
+partitions 分区
+MyTopic topic 名称
+
+```
