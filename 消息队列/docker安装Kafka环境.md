@@ -50,3 +50,5 @@ partitions 分区
 MyTopic topic 名称
 
 ```
+
+- 列出所有topic `bin/kafka-topics.sh --list --zookeeper localhost:2181`
