@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="t"></div>
+    <script src="./js/jquery-3.3.1.min.js"></script>
+    <script src="./js/jsencrypt.js"></script>
+    <!-- <script src="./js/components/core.js"></script>
+    <script src="./js/components/sha1.js"></script>-->
+    <script>
+        let a = "123456";
+        //let mi = CryptoJS.SHA1(a);
+        // 前端私钥
+        let fontPrivateKey = "MIICeAIBADANBgkqhkiG9w0BAQEFAASCAmIwggJeAgEAAoGBALwKpMx59Ovalyp5\n" +
+            "eufkqCo4tejT66gbcZAh2KWWUx+iBYccuQxQFM6HY+gCSOE0KVM73kLW5WqL/xT4\n" +
+            "OFH6R+Zf3RdswIySTdD80bKtd3aOGqgaLFP52tXKZ2KOxn1kNis28ZqFJ0X+h4B+\n" +
+            "9kETiMq5t07tcwy8CwBKn8VG85WtAgMBAAECgYEAg6/QiYI/C40hoBVDBXMUcb0V\n" +
+            "Z+BBgJD3jsClQBFuVRDaXiy3SvAqIhie1rQC5fPpnOioVpa4Q02XbdAHYSGth2yv\n" +
+            "dlXukaFaRvwy5IG4hpQb0loHnGELrduUNv+Pl4r04QHyWCh2tRmx7q6vov/k7kVO\n" +
+            "ZSM18MOP5XtKN/fe+QECQQDlV4/OdUO31c4RTf+UGvJKnOI035upsHxvolZxRFW1\n" +
+            "rbBdrhZNClwP6FaEgOR+UKMHYZXH2y5+5UYQTHh9HwUFAkEA0eYe8rzDKhkvusas\n" +
+            "mmHHy+Onsrs252QkNpG3iMoAn20PObgaiYLNA7Bi3mZyw1CeVfCjrKYUoB3eOHPy\n" +
+            "DxcuiQJBAOR1zn6nWBcYeFfKsE/UbAqhr8FmAwYOFleKirv4i70Y0fjwQ6zpJf5+\n" +
+            "vzjtwTCHmW/v6SoXEIE+WgZAd0KFFRUCQQCTLetRhe7LnDGNpDXvYtT4ML+sYf4T\n" +
+            "rnJ+GRs6vXpGT/C3JlLlTWR4S7xn+ipKrkL4O+5o52PbClaB+zsmPbkRAkB58IHd\n" +
+            "zgqIwoDhYTTgwq9WKW1yp+B9yJuUi/LqJ/oUEjS878eueHVrRl0Q2aq+SCu6FbFF\n" +
+            "t2VOwGndsTnXGMoC";
+
+        // 后端公钥
+        let endPublicKey =
+            "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDBz+djUFgLbF8YJzcaCLDNcS7OK6kruVqmsY4EdfdvXnha8Q074qFPVzTBFU2VZzALiPr+zhWHuLWkjJkEyigzu5X9tDucuqLoPtptnDMKnr54yxwrgA/pyr2/bspkRWnc1khN1bcwIEuG2o+PIreWNfRd7vOIg2DeFKxz4R0qmwIDAQAB";
+        //$("#t").text(mi);
+        generateEntype();
+
+        function generateEntype() {
+            let words = "123456";
+            let encrypt = new JSEncrypt();
+            encrypt.setPublicKey(endPublicKey);
+            // encrypt.setPrivateKey(fontPrivateKey)
+            let encryptPwd = encrypt.encryptLong(words);
+            // let data = encrypt.decrypt(
+            //     'rOjHQ9qQ2FDkpVRIoCS+1GgCp8FGinig7HnqD3rpoD6gSUeeeCccoh3K71fYsuoeLmmuPT15crfwcyaHFjQ993BD9WXraIniJ+PMpnNA7RGjaMFIw5ckp8PgDVnBRr4dJuDSX7WfVq3YOzQAIJdQPvR62/beJR1KXoQrNQi0kx4='
+            // )
+            $("#t").text(encryptPwd);
+            // console.log('解密：', data)
+        }
+    </script>
+</body>
+
+</html>
